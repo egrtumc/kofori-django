@@ -1,0 +1,6 @@
+django-admin startproject btre . => create btre folder;
+
+
+git init =>
+.gitigonre => dont add stuff in this folder into git respo.
+use gitignore.io => for framework that u use [easy search]
