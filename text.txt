@@ -1,6 +1,169 @@
-django-admin startproject btre . => create btre folder;
+1. django-admin startproject btre . => create btre folder;
 
 
-git init =>
+2. git init
 .gitigonre => dont add stuff in this folder into git respo.
-use gitignore.io => for framework that u use [easy search]
+3. use gitignore.io => for framework that u use [easy search]
+place code in .gitignore
+
+
+4. python mange.py runserver => to test
+
+5. python manage.py startapp pages => create pages folder
+
+6. add 'pages.apps.PagesConfig' inside btre/settings.py => INSTALLED_APPS =[...]
+for called whatever inside apps.py [in pages folder] is app
+
+7. pip install autopep8
+
+8. create url.py in pages folder and use views.py as url for url.py ca
+ll fn. in views.py
+
+9. goto btre\urls.py add path('',include('pages.urls')), in that to link
+main django into pages
+
+10. where to look for template go to
+ btre\settings.py 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+11. create folder templates => for index.html and manay pages
+=> after create dont for get to link with pages/views.py
+and link views.py with urls.py
+
+
+12. babababa
+
+13. create static and bring folder in there
+
+14. in settings.py => STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'btre/static')
+]
+
+15. python manage.py help => to check staticfiles
+
+16. if we use command python manage.py collectstatic => create static folder for d
+deployment in django
+
+dont foget to add
+/media
+venv
+/static
+in .gitignore
+
+16.1 create listeningapp==> python manage.py startapp listings
+it will create
+16.2 python manage.py startapp realtors ==> for module
+
+17. ==...=> pip install psycopg2 and pip install psycopg2-binary
+
+18. go to setting.py => go to line[database]
+
+Listing page fields==>
+id: INT
+realtor INT (FOREIGN KEY [realtor])
+title: STR
+address: STR
+city: STR
+state: STR
+zipcode: STR
+description: TEXT
+price: INT
+bedrooms: INT
+bathrooms: INT
+garage: INT [0]
+sqft: INT
+lot_size: FLOAT
+is_published: BOOL [true] //default
+list_date: DATE
+photo_main: STR [stroing location of image]
+photo_1: STR
+photo_2: STR
+photo_3: STR
+photo_4: STR
+photo_5: STR
+photo_6: STR
+
+
+REALTOR===>
+id: INT
+name: STR
+photo: STR
+description: TEXT
+email: STR
+photo: STR
+is_mvp: BOOL [0]
+hire_date: DATE
+
+contact==>
+id: INT
+user_id: INT
+listing: INT
+listing_id: INT
+name: STR
+email: STR
+phone: STR
+message: TEXT
+contact_date: DATE
+
+after create all database
+note: pip install pillow [forimage]
+19. python manage.py makemigrations ..whatfolder/file/name/thatwecreated/.. ==> create migration on migration file in each database
+that we write
+==> check out
+
+20. python manage.py sqlmigrate listings 0001 => check what inside that file
+
+21. python manage.py migrate => change database add to table [add to pgadmid4]
+
+
+22. python manage.py createsuperuser
+kofori
+egrtumc29@gmail.com
+123456
+123456
+
+23. pip install pylint-django ==> for vsCode
+
+'django.contrib.humanize', for , , , ,
+
+24. python manage.py startapp accounts
+use model in django for register and signin => auth_user (table in django)
+
+25.
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR:'danger'
+}
+
+26. 24. python manage.py startapp contacts
+put new app in setting.py !!
+python manage.py makemigration contacts
+python manage.py migrate // to check
+
+
+Deployment!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+DigitalOcean ==> virtual private server
+
+1. create newrespo => btre_project [name],private,create
+commandline: cat .gitignore
+> git init , git add . , git commit -m '...' , git remote add origin ....
+,git push -u origin master
+https://gist.github.com/bradtraversy/cfa565b879ff1458dba08f423cb01d71
+
+==> command line: not (venv) in pycharm
+Creating SSH keys (Optional)
+To generate a key on your local machine
+$ ssh-keygen
+
+Hit enter all the way through and it will create a public and private key at
+~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
+
+window is suckkkkkkk cant sshshshshshshshshshshshshshsh
+
+
+Simple Firewall Setup cant window suckkkk
+
+Software
+
