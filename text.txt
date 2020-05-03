@@ -173,5 +173,10 @@ Software
 Deplotment new part:
 heroku login
 pip install gunicorn
-
+pip freeze > requirements.txt
+git init
+git add -A
+git commit -m 'aaa'
+heroku create django-learn
+git push heroku master
 
