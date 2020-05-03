@@ -167,3 +167,11 @@ Simple Firewall Setup cant window suckkkk
 
 Software
 
+
+
+
+Deplotment new part:
+heroku login
+pip install gunicorn
+
+
